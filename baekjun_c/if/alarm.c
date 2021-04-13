@@ -6,19 +6,28 @@ int main(void){
     scanf("%d %d", &hour, &minute);
     if (hour == 0){
         if (minute >= 45 && minute <= 59)
-            printf("%d %d", hour, minute - 45);
-        else if (minute > 0 && minute < 45)
-            printf("%d %d", 23, minute + 15);
-        else if (minute == 0)
-            printf("%d %d", 23, 15);
+            minute -= 45;
+        else if (minute > 0 && minute < 45){
+            hour = 23;
+            minute += 15;
+        }
+        else if (minute == 0){
+            hour = 23;
+            minute = 15;
+        }
     }
     else{
         if (minute >= 45 && minute <= 59)
-            printf("%d %d", hour, minute - 45);
-        else if (minute > 0 && minute < 45)
-            printf("%d %d", hour - 1, minute + 15);
-        else if (minute == 0)
-            printf("%d %d", hour - 1, 15);
+            minute -= 45;
+        else if (minute > 0 && minute < 45){
+            hour -= 1;
+            minute += 15;
+        }
+        else if (minute == 0){
+            hour -= 1;
+            minute = 15;
+        }
     }
+    printf("%d %d", hour, minute);
     return 0;
 }
