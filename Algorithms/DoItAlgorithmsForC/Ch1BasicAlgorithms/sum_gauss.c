@@ -2,7 +2,7 @@
 
 int main(void){
     int a, sum;
-    printf("Enter a numsumer: ");
+    printf("Enter a number: ");
     scanf("%d", &a);
 
     sum = (a + 1) * a / 2;
